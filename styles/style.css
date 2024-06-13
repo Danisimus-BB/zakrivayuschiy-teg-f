@@ -20,14 +20,12 @@
   font-family: var(--major-font), sans-serif;
   background-color: var(--background-color);
   color: var(--accent-color);
-  background-image: var(--background-image);
-
-
+  background-image: var(--background-image);x
 }
 
-/* Начло блока стилей для шапки */ 
-.header { 
-  border:  2px solid var(--accent-color);
+/* Начло блока стилей для шапки */
+.header {
+  border: 2px solid var(--accent-color);
   max-width: 700px;
   margin-inline: auto;
   background-color: var(--background-color);
@@ -37,9 +35,8 @@
   margin-bottom: 100px;
   padding-top: 140px;
   padding-bottom: 20px;
-
 }
-.header-title { 
+.header-title {
   display: block;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
   padding-bottom: 20px;
@@ -52,9 +49,8 @@
 .header__theme-menu {
   display: flex;
   justify-content: center;
-
 }
-.theme-menu__list { 
+.theme-menu__list {
   display: flex;
   flex-direction: column;
   gap: 10px;
@@ -69,17 +65,17 @@
 }
 
 .theme-menu__button::before {
-  content: '';
+  content: "";
   padding: 0;
 }
 
 .theme-menu__button:disabled {
   opacity: 0.6;
   pointer-events: none;
-} 
+}
 
 .theme-menu__button:disabled::before {
-  content: '▶️';
+  content: "▶️";
   animation: arrow 1s infinite;
   animation-duration: alternate;
   animation-timing-function: ease-in-out;
@@ -106,7 +102,7 @@
 }
 
 .theme-menu__button::after {
-  content: '';
+  content: "";
   display: block;
   width: 0%;
   height: 2px;
@@ -120,9 +116,9 @@
   background-color: var(--accent-color);
 }
 
-/* конец блока стилей шапки */ 
+/* конец блока стилей шапки */
 
-/* начало блока стилей карточек*/ 
+/* начало блока стилей карточек*/
 
 .section {
   max-width: 700px;
@@ -137,7 +133,7 @@
   border: 2px solid var(--accent-color);
   margin-inline: auto;
 }
-.image-block { 
+.image-block {
   overflow: hidden;
   position: relative;
   max-height: 700px;
@@ -148,7 +144,7 @@
   border-bottom: 2px solid var(--accent-color);
   object-fit: cover;
   width: 100%;
-  height: 100%; 
+  height: 100%;
 }
 .card-label {
   z-index: 1;
@@ -171,15 +167,11 @@
 
 .text-card {
   display: grid;
-  gap: 25px; 
+  gap: 25px;
   font-size: 18px;
   line-height: 21px;
   padding: 25px 25px;
-
-
 }
-
-
 
 /* конеч блока стилей карточек*/
 
@@ -187,18 +179,17 @@
 .card-button-block {
   display: flex;
   justify-content: end;
-  gap: 10px; 
+  gap: 10px;
   align-items: center;
   margin: 25px 25px 25px 0px;
-
 }
 
-.button { 
+.button {
   display: flex;
   justify-content: center;
   align-items: center;
   background-color: var(--background-color);
-  border: none; 
+  border: none;
   outline: 2px solid var(--accent-color);
   font-family: var(--accent-font), sans-serif;
   position: relative;
@@ -206,14 +197,14 @@
   cursor: pointer;
 }
 .button:focus {
-  border: none; 
+  border: none;
 }
 
 .button:focus-visible {
   box-shadow: 2px 2px 0px 2px var(--accent-color);
   outline: 2px solid var(--accent-color);
 }
-.button__text { 
+.button__text {
   z-index: 1;
   position: relative;
   font-size: 14px;
@@ -221,54 +212,52 @@
   mix-blend-mode: difference;
   cursor: pointer;
 }
-.button::after { 
-  content: '';
+.button::after {
+  content: "";
   display: block;
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
-  transform: translateX(-100%); 
+  transform: translateX(-100%);
 }
 .button:hover::after {
   cursor: pointer;
   transform: translateX(0);
 }
 
-.card__icon-button { 
+.card__icon-button {
   background-color: transparent;
   padding: 0;
   color: transparent;
   transition: color 0.3s ease;
-  outline: 2px solid; 
+  outline: 2px solid;
   border: none;
 }
 .card__icon-button:focus-visible {
   color: var(--accent-color);
   outline: 2px solid var(--accent-color);
- }
-.card__like-button { 
+}
+.card__like-button {
   width: 126px;
   height: 38px;
   padding: 0px;
 }
-.dialog-button { 
+.dialog-button {
   gap: 10px;
   margin-block-start: 55px;
-  margin-block-end: 100px; 
-  margin-inline: auto; 
+  margin-block-end: 100px;
+  margin-inline: auto;
   width: 335px;
-
 }
-.floppy-svg { 
+.floppy-svg {
   z-index: 1;
   width: 21px;
   position: relative;
   color: var(--like-button-color);
   mix-blend-mode: difference;
-  
 }
 /* конец блока стилей кнопок */
 
-/* начало блока стилей модального окна */ 
+/* начало блока стилей модального окна */
 .modal-window {
   background-color: var(--background-color);
   border: none;
@@ -285,7 +274,7 @@
 
 .modal-window::backdrop {
   background-color: rgb(0 0 0 / 0.75);
-} 
+}
 
 .modal-window_button {
   text-transform: uppercase;
@@ -313,11 +302,11 @@
   display: block;
   max-width: 200px;
 }
-/* Конец  блока стилей модального окна */ 
+/* Конец  блока стилей модального окна */
 
-/* Начло блока стилей фильтров картинок */ 
+/* Начло блока стилей фильтров картинок */
 .filter-1 {
-  filter: brightness(120%)
+  filter: brightness(120%);
 }
 
 .filter-2 {
@@ -333,16 +322,13 @@
   filter: invert(70%);
 }
 .filter-6 {
-  filter:sepia(0.3);
-
+  filter: sepia(0.3);
 }
 .filter-7 {
   filter: grayscale(80%) hue-rotate(50deg);
-
 }
 .filter-8 {
   filter: contrast(210%) sepia(0.5);
-
 }
 /* Конец блока стилей фильтров картинок */
 
@@ -362,7 +348,7 @@
     max-width: 316px;
   }
 
-  .image-block{
+  .image-block {
     height: 375px;
     width: 371px;
     position: relative;
@@ -372,7 +358,7 @@
   .dialog-button {
     flex-direction: column;
     width: 306px;
-  } 
+  }
 
   .floppy {
     width: 28px;
@@ -381,10 +367,5 @@
   .modal-window_button {
     width: 257px;
   }
-  }
-  /* Конец небольшого  блока медиа */
-  
-
-
-
-
+}
+/* Конец небольшого  блока медиа */
