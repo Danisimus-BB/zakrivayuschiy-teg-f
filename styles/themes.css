@@ -4,3 +4,58 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+:root.theme-dark { 
+    --background-color: black;
+    --accent-color: #00cc14;
+    --title-card-font-weight: 785;
+    --text-card-font-weght: 465;
+    --background-image: repeating-linear-gradient(#000,#000 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(90deg,#000,#000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c, #004306);
+    --heart-countour-color: #00cc14; 
+    --heart-filled-color: red; 
+    --heart-full-color: #00cc14;
+    --shadow: black;
+    --like-button-color: #00cc14;
+
+
+
+}
+
+:root.theme-light { 
+    --background-color: white;
+    --accent-color: black; 
+    --title-card-font-weight: 700;
+    --text-card-font-weght: 400;
+    --background-image: repeating-linear-gradient(#d3d3d3,#d3d3d3 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(90deg,#d3d3d3,#d3d3d3 2px, transparent 2px, transparent 4px),
+    linear-gradient(#e7e7e7, #1a1a1a);
+    --heart-countour-color: black; 
+    --heart-filled-color: red; 
+    --heart-full-color: black ;
+    --shadow: white;
+    --like-button-color: white;
+
+
+}
+
+@media (prefers-color-scheme: dark) {
+    :root { 
+        --background-color: black;
+        --accent-color: #00cc14;
+        --title-card-font-weight: 785;
+        --text-card-font-weght: 465;
+        --background-image: repeating-linear-gradient(#000,#000 2px, transparent 2px, transparent 4px), 
+    repeating-linear-gradient(90deg,#000,#000 2px, transparent 2px, transparent 4px),
+    linear-gradient(#007f0c, #004306);
+    --heart-countour-color: #00cc14; 
+    --heart-filled-color: red; 
+    --heart-full-color: #00cc14;
+    --shadow: black; 
+    --like-button-color: #00cc14;
+
+
+        
+    }
+}

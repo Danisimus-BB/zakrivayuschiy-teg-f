@@ -17,4 +17,374 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--major-font), sans-serif;
+  background-color: var(--background-color);
+  color: var(--accent-color);
+  background-image: var(--background-image);
+
+
 }
+
+/* Начло блока стилей для шапки */ 
+.header { 
+  border:  2px solid var(--accent-color);
+  max-width: 700px;
+  margin-inline: auto;
+  background-color: var(--background-color);
+  text-align: center;
+  font-family: var(--accent-font), sans-serif;
+  margin-top: 100px;
+  margin-bottom: 100px;
+  padding-top: 140px;
+  padding-bottom: 20px;
+
+}
+.header-title { 
+  display: block;
+  font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
+  padding-bottom: 20px;
+  text-decoration: none;
+}
+
+.header-title:focus {
+  outline: none;
+}
+.header__theme-menu {
+  display: flex;
+  justify-content: center;
+
+}
+.theme-menu__list { 
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding-top: 25px;
+  text-align: left;
+}
+.theme-menu__button {
+  background-color: transparent;
+  border: none;
+  text-transform: uppercase;
+  transition: opacity 1s;
+}
+
+.theme-menu__button::before {
+  content: '';
+  padding: 0;
+}
+
+.theme-menu__button:disabled {
+  opacity: 0.6;
+  pointer-events: none;
+} 
+
+.theme-menu__button:disabled::before {
+  content: '▶️';
+  animation: arrow 1s infinite;
+  animation-duration: alternate;
+  animation-timing-function: ease-in-out;
+  position: absolute;
+  left: -90px;
+  top: 0;
+}
+.theme-menu__item {
+  position: relative;
+  padding-inline-start: 21px;
+}
+
+.theme-menu__button:hover {
+  opacity: 0.6;
+  cursor: pointer;
+}
+
+.theme-menu__button:focus {
+  outline: none;
+}
+
+.theme-menu__button:focus-visible {
+  opacity: 0.6;
+}
+
+.theme-menu__button::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  margin-top: 2px;
+  background-color: var(--accent-color);
+  transition: width 300ms, background-color 1s;
+}
+
+.theme-menu__button:focus-visible::after {
+  width: 100%;
+  background-color: var(--accent-color);
+}
+
+/* конец блока стилей шапки */ 
+
+/* начало блока стилей карточек*/ 
+
+.section {
+  max-width: 700px;
+  margin-inline: auto;
+  display: grid;
+  gap: 50px;
+}
+
+.card {
+  display: block;
+  background-color: var(--background-color);
+  border: 2px solid var(--accent-color);
+  margin-inline: auto;
+}
+.image-block { 
+  overflow: hidden;
+  position: relative;
+  max-height: 700px;
+}
+
+.card-image {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  object-fit: cover;
+  width: 100%;
+  height: 100%; 
+}
+.card-label {
+  z-index: 1;
+  font-family: var(--accent-font), sans-serif;
+  font-size: 14px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  mix-blend-mode: hard-light;
+  color: var(--accent-color);
+  text-shadow: var(--shadow) 1px 1px, var(--shadow) -1px -1px;
+  opacity: 0.5;
+}
+.card-title {
+  font-size: 18px;
+  line-height: 21px;
+  padding: 5px 10px 3px;
+  text-align: left;
+}
+
+.text-card {
+  display: grid;
+  gap: 25px; 
+  font-size: 18px;
+  line-height: 21px;
+  padding: 25px 25px;
+
+
+}
+
+
+
+/* конеч блока стилей карточек*/
+
+/* начало блока стилей кнопок */
+.card-button-block {
+  display: flex;
+  justify-content: end;
+  gap: 10px; 
+  align-items: center;
+  margin: 25px 25px 25px 0px;
+
+}
+
+.button { 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  border: none; 
+  outline: 2px solid var(--accent-color);
+  font-family: var(--accent-font), sans-serif;
+  position: relative;
+  transition: box-shadow 0.5s;
+  cursor: pointer;
+}
+.button:focus {
+  border: none; 
+}
+
+.button:focus-visible {
+  box-shadow: 2px 2px 0px 2px var(--accent-color);
+  outline: 2px solid var(--accent-color);
+}
+.button__text { 
+  z-index: 1;
+  position: relative;
+  font-size: 14px;
+  color: var(--like-button-color);
+  mix-blend-mode: difference;
+  cursor: pointer;
+}
+.button::after { 
+  content: '';
+  display: block;
+  background-color: var(--accent-color);
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%); 
+}
+.button:hover::after {
+  cursor: pointer;
+  transform: translateX(0);
+}
+
+.card__icon-button { 
+  background-color: transparent;
+  padding: 0;
+  color: transparent;
+  transition: color 0.3s ease;
+  outline: 2px solid; 
+  border: none;
+}
+.card__icon-button:focus-visible {
+  color: var(--accent-color);
+  outline: 2px solid var(--accent-color);
+ }
+.card__like-button { 
+  width: 126px;
+  height: 38px;
+  padding: 0px;
+}
+.dialog-button { 
+  gap: 10px;
+  margin-block-start: 55px;
+  margin-block-end: 100px; 
+  margin-inline: auto; 
+  width: 335px;
+
+}
+.floppy-svg { 
+  z-index: 1;
+  width: 21px;
+  position: relative;
+  color: var(--like-button-color);
+  mix-blend-mode: difference;
+  
+}
+/* конец блока стилей кнопок */
+
+/* начало блока стилей модального окна */ 
+.modal-window {
+  background-color: var(--background-color);
+  border: none;
+  outline: 2px solid var(--accent-color);
+  color: var(--accent-color);
+  font-family: var(--accent-font), fantasy, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  padding: 0px;
+}
+.modal-window_content {
+  display: flex;
+}
+
+.modal-window::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+} 
+
+.modal-window_button {
+  text-transform: uppercase;
+  height: 38px;
+  width: 293px;
+  padding: 0px;
+}
+
+.modal-window:is([open]) .modal-window_form {
+  display: grid;
+  gap: 30px;
+  align-self: center;
+}
+
+.modal-window:is([open]) .floppy {
+  min-width: 39px;
+  margin-inline-end: 20px;
+}
+
+.modal-window_form {
+  padding: 30px;
+}
+
+.modal-window_text {
+  display: block;
+  max-width: 200px;
+}
+/* Конец  блока стилей модального окна */ 
+
+/* Начло блока стилей фильтров картинок */ 
+.filter-1 {
+  filter: brightness(120%)
+}
+
+.filter-2 {
+  filter: saturate(150%);
+}
+.filter-3 {
+  filter: blur(5px);
+}
+.filter-4 {
+  filter: contrast(210%);
+}
+.filter-5 {
+  filter: invert(70%);
+}
+.filter-6 {
+  filter:sepia(0.3);
+
+}
+.filter-7 {
+  filter: grayscale(80%) hue-rotate(50deg);
+
+}
+.filter-8 {
+  filter: contrast(210%) sepia(0.5);
+
+}
+/* Конец блока стилей фильтров картинок */
+
+/* Начало небольшого  блока медиа */
+@media (width <= 375px) {
+  .header {
+    width: 100%;
+    padding-block-start: 120px;
+  }
+
+  .section {
+    width: 100vw;
+  }
+
+  .card_title {
+    display: block;
+    max-width: 316px;
+  }
+
+  .image-block{
+    height: 375px;
+    width: 371px;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .dialog-button {
+    flex-direction: column;
+    width: 306px;
+  } 
+
+  .floppy {
+    width: 28px;
+  }
+
+  .modal-window_button {
+    width: 257px;
+  }
+  }
+  /* Конец небольшого  блока медиа */
+  
+
+
+
+
