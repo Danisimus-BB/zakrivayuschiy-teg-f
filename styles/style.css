@@ -82,7 +82,7 @@
 
 .theme-menu__button:disabled::before {
   content: "▶️";
-  animation: arrow_shift 1s infinite;
+  animation: arrow_shift 0.5s infinite;
   animation-duration: alternate;
   animation-timing-function: ease-in-out;
   position: absolute;
@@ -176,7 +176,7 @@
 }
 .card-title {
   font-size: 18px;
-  padding: 5px 10px 3px;
+  padding: 10px 10px 3px;
   line-height: 21px;
   text-align: left;
   font-variation-settings: 'wght' var(--font-wght-card-title);
@@ -261,8 +261,7 @@
 }
 .card__like-button {
   width: 126px;
-  height: 38px;
-  padding: 0px;
+  height: 35px;
 }
 .dialog-button {
   gap: 10px;
@@ -367,10 +366,19 @@
   .section {
     width: 100vw;
   }
+  .card {
+    margin-top: -3px;
+  }
 
   .card_title {
     display: block;
-    max-width: 316px;
+    max-width: 371px;
+    max-height: 54px;
+    padding: 0px 10px;
+  }
+  .card-label {
+    right: 10px;
+    top: 17px;
   }
 
   .image-block {
@@ -384,6 +392,9 @@
     flex-direction: column;
     width: 306px;
     height: 80px;
+    margin-block-start: 28px;
+    gap: 0;
+    margin-block-start: 55px;
   }
   .save-text {
     padding-bottom: 10px;
