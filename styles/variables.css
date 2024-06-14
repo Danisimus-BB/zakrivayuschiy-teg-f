@@ -6,14 +6,22 @@
     --text-card-font-weght: 400;
     --background-color: white; 
     --accent-color: black; 
-    --background-image: repeating-linear-gradient(#d3d3d3,#d3d3d3 2px, transparent 2px, transparent 4px), 
-    repeating-linear-gradient(90deg,#d3d3d3,#d3d3d3 2px, transparent 2px, transparent 4px),
-    linear-gradient(#e7e7e7, #1a1a1a);
+    --background_image: repeating-linear-gradient(
+        to right,
+        #d3d3d3 0 2px,
+        transparent 2px 4px
+      ),
+      repeating-linear-gradient(#d3d3d3 0 2px, transparent 2px 4px),
+      repeating-linear-gradient(#e7e7e7 0.01%, #1a1a1a);
     --heart-countour-color: black; 
     --heart-filled-color: red; 
     --heart-full-color: black ;
     --shadow: white;
     --like-button-color: white;
+    --font-wght-card-title: 700; 
+    --font-wght-card-text: 400; 
+    
+
 
 
 }

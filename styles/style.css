@@ -20,7 +20,8 @@
   font-family: var(--major-font), sans-serif;
   background-color: var(--background-color);
   color: var(--accent-color);
-  background-image: var(--background-image);x
+  background-image: var(--background-image);
+  background-attachment: fixed;
 }
 
 /* Начло блока стилей для шапки */
@@ -31,16 +32,20 @@
   background-color: var(--background-color);
   text-align: center;
   font-family: var(--accent-font), sans-serif;
-  margin-top: 100px;
-  margin-bottom: 100px;
-  padding-top: 140px;
-  padding-bottom: 20px;
+  margin-block-start: 100px;
+  margin-block-end: 100px;
+  padding-block-start: 135px;
+  padding-block-end: 22px;
 }
 .header-title {
   display: block;
   font-size: clamp(3.0625rem, 2.7104rem + 1.5023vw, 4.0625rem);
-  padding-bottom: 20px;
+  padding-bottom: 23px;
   text-decoration: none;
+}
+.header-text { 
+  text-transform: uppercase;
+  font-size: clamp(0.875rem, 0.6769rem + 0.8451vw, 1.4375rem);
 }
 
 .header-title:focus {
@@ -53,7 +58,8 @@
 .theme-menu__list {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
+  font-size: 14px;
   padding-top: 25px;
   text-align: left;
 }
@@ -76,7 +82,7 @@
 
 .theme-menu__button:disabled::before {
   content: "▶️";
-  animation: arrow 1s infinite;
+  animation: arrow_shift 1s infinite;
   animation-duration: alternate;
   animation-timing-function: ease-in-out;
   position: absolute;
@@ -151,26 +157,39 @@
   font-family: var(--accent-font), sans-serif;
   font-size: 14px;
   position: absolute;
-  right: 10px;
-  top: 25px;
+  right: 25px;
+  top: 30px;
   mix-blend-mode: hard-light;
   color: var(--accent-color);
+  -webkit-text-stroke-width: 1;
+  -webkit-text-stroke-color: white; 
   text-shadow: var(--shadow) 1px 1px, var(--shadow) -1px -1px;
   opacity: 0.5;
 }
+@supports((text-stroke: 1px white;) or (-webkit-text-stroke: 1px white;)) {
+.card-label {
+  -webkit-text-stroke: 1px white; 
+  text-stroke: 1px white; 
+  text-shadow: none;
+}
+
+}
 .card-title {
   font-size: 18px;
-  line-height: 21px;
   padding: 5px 10px 3px;
+  line-height: 21px;
   text-align: left;
+  font-variation-settings: 'wght' var(--font-wght-card-title);
+  
 }
 
 .text-card {
   display: grid;
-  gap: 25px;
+  gap: 27px;
   font-size: 18px;
   line-height: 21px;
-  padding: 25px 25px;
+  padding: 21px 25px;
+  font-variation-settings: 'wght' var(--font-wght-card-text);
 }
 
 /* конеч блока стилей карточек*/
@@ -179,9 +198,10 @@
 .card-button-block {
   display: flex;
   justify-content: end;
-  gap: 10px;
+  gap: 8px;
   align-items: center;
-  margin: 25px 25px 25px 0px;
+  padding-block-end: 25px;
+  padding-inline-end: 25px;
 }
 
 .button {
@@ -195,6 +215,7 @@
   position: relative;
   transition: box-shadow 0.5s;
   cursor: pointer;
+  overflow: hidden;
 }
 .button:focus {
   border: none;
@@ -210,14 +231,16 @@
   font-size: 14px;
   color: var(--like-button-color);
   mix-blend-mode: difference;
-  cursor: pointer;
 }
 .button::after {
-  content: "";
+  content: '';
   display: block;
+  height: 100%;
+  width: 100%;
   background-color: var(--accent-color);
   transition: transform 0.5s ease-in-out;
   transform: translateX(-100%);
+  position: absolute;
 }
 .button:hover::after {
   cursor: pointer;
@@ -243,10 +266,11 @@
 }
 .dialog-button {
   gap: 10px;
-  margin-block-start: 55px;
+  margin-block-start: 50px;
   margin-block-end: 100px;
   margin-inline: auto;
   width: 335px;
+  height: 50px;
 }
 .floppy-svg {
   z-index: 1;
@@ -301,33 +325,34 @@
 .modal-window_text {
   display: block;
   max-width: 200px;
+  line-height: 21px;
 }
 /* Конец  блока стилей модального окна */
 
 /* Начло блока стилей фильтров картинок */
-.filter-1 {
+.filter-brightness {
   filter: brightness(120%);
 }
 
-.filter-2 {
+.filter-saturate {
   filter: saturate(150%);
 }
-.filter-3 {
+.filter-blur {
   filter: blur(5px);
 }
-.filter-4 {
+.filter-contrast {
   filter: contrast(210%);
 }
-.filter-5 {
+.filter-invert {
   filter: invert(70%);
 }
-.filter-6 {
+.filter-sepia {
   filter: sepia(0.3);
 }
-.filter-7 {
+.filter-grayscale-hue-rotate{
   filter: grayscale(80%) hue-rotate(50deg);
 }
-.filter-8 {
+.filter-contrast-sepia {
   filter: contrast(210%) sepia(0.5);
 }
 /* Конец блока стилей фильтров картинок */
@@ -358,9 +383,13 @@
   .dialog-button {
     flex-direction: column;
     width: 306px;
+    height: 80px;
+  }
+  .save-text {
+    padding-bottom: 10px;
   }
 
-  .floppy {
+  .floppy-svg {
     width: 28px;
   }
 
